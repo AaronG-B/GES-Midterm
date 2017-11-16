@@ -9,11 +9,28 @@ public class Pickup : MonoBehaviour {
     private PolygonCollider2D polyCollider;
     private AudioSource audioSource;
 
+    private void OnPlayerRespawnFromCheckpoint()
+    {
+        SetActive();
+    }
+
+    private void OnEnable()
+    {
+        Hazard.PlayerRespawnFromCheckpoint += OnPlayerRespawnFromCheckpoint;
+
+    }
+
+    private void OnDisable()
+    {
+        Hazard.PlayerRespawnFromCheckpoint -= OnPlayerRespawnFromCheckpoint;
+    }
+
     public void SetActive()
     {
         spriteRenderer.enabled = true;
         polyCollider.enabled = true;
     }
+
 
 
     // Use this for initialization

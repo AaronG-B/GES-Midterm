@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Hazard : MonoBehaviour {
 
 
-
-
+    public static event Action PlayerRespawnFromCheckpoint
+    ;
+   
     GameManager gm;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,6 +28,10 @@ public class Hazard : MonoBehaviour {
                 Debug.Log("Go to Checkpoint");
                 gm.ResetPickups();
 
+                if (PlayerRespawnFromCheckpoint != null)
+                {
+                    PlayerRespawnFromCheckpoint.Invoke();
+                }
             }
 
 

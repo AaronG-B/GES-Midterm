@@ -6,21 +6,12 @@ public class GameManager : MonoBehaviour {
 
     public List<GameObject> Pickups;
 
-    public static GameManager instance = null;
+    //public static GameManager instance = null;
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         Pickups.Clear();
-       
-        if (instance = null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
     }
 
     // Use this for initialization
