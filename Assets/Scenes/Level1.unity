@@ -1312,6 +1312,11 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 68582547101861094, guid: efecdc818711b43e2b67dde3367dee1c,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efecdc818711b43e2b67dde3367dee1c, type: 2}
   m_IsPrefabParent: 0
